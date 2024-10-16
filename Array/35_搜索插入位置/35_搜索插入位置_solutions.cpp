@@ -1,4 +1,4 @@
-```cpp
+
 class Solution {
 public:
     int searchInsert(vector<int>& nums, int target) {
@@ -27,4 +27,4 @@ public:
 //    后来问了一下gpt，它说直接return left   我还没有特别想明白为什么
 //    原因：二分查找结束后：
 //          left 最终指向第一个大于或等于 target 的位置，也就是目标值的插入位置。
-```
+
