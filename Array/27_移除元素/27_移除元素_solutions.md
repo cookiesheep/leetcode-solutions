@@ -1,22 +1,22 @@
 ```cpp
 
-// class Solution {
-// public:
-//     int removeElement(vector<int>& nums, int val) {
-//         int k=nums.size();
-//         for(int i=0;i<nums.size();i++)
-//         {
-//             if(nums[i]==val) 
-//                 {
-//                     k--;
-//                     nums[i]=105;            //val最大为100
-//                 }
-//         }
+ class Solution {
+ public:
+     int removeElement(vector<int>& nums, int val) {
+         int k=nums.size();
+         for(int i=0;i<nums.size();i++)
+         {
+             if(nums[i]==val) 
+                 {
+                     k--;
+                     nums[i]=105;            //val最大为100
+                 }
+         }
         
-//         sort(nums.begin(), nums.end());     //给vector排序时要用迭代器
-//         return k;
-//     }
-// };
+         sort(nums.begin(), nums.end());     //给vector排序时要用迭代器
+         return k;
+     }
+ };
 
 
 //15min
