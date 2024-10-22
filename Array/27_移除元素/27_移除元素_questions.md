@@ -31,7 +31,7 @@ for (int i = 0; i < actualLength; i++) {
     assert nums[i] == expectedNums[i];
 }
 如果所有的断言都通过，你的解决方案将会通过。
-
+```
 ### 示例 1：
 - 输入：`nums = [3,2,2,3]`, `val = 3`
 - 输出：`2, nums = [2,2,_,_]`
