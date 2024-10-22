@@ -26,6 +26,7 @@ class Solution {
         return j + 1;
     }
 }
+```
 时间复杂度：O(n)
 空间复杂度：O(1)
 通用解法
@@ -49,7 +50,7 @@ class Solution {
 
 代码（感谢 @🍭可乐可乐吗QAQ 和 @Benhao 两位同学提供的其他语言版本）：
 
-cpp
+```cpp
 复制代码
 class Solution {
 public:
@@ -66,6 +67,7 @@ public:
         return idx;  
     }
 };
+```
 时间复杂度：O(n)
 空间复杂度：O(1)
 小剪枝
@@ -75,7 +77,7 @@ public:
 
 代码：
 
-java
+```java
 复制代码
 class Solution {
     public int removeDuplicates(int[] nums) {
@@ -92,5 +94,6 @@ class Solution {
         return idx;
     }
 }
+```
 时间复杂度：O(n)
 空间复杂度：O(1)
