@@ -17,7 +17,7 @@
 文字描述一般在不懂逻辑的时候都比较不容易理解，所以请结合图解来加快理解。
 
 
-<a>https://pic.leetcode-cn.com/1616899257-WqSIol-9.jpg 示意图</a>
+<a>https://pic.leetcode-cn.com/1616899257-WqSIol-9.gif 示意图</a>
 
 
 ```cpp
