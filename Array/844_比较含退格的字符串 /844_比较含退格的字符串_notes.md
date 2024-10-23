@@ -17,7 +17,54 @@
 文字描述一般在不懂逻辑的时候都比较不容易理解，所以请结合图解来加快理解。
 
 
-![image](https://github.com/user-attachments/assets/abb316af-f05a-4a79-9013-d1f816be74bc)
+<a>https://pic.leetcode-cn.com/1616899257-WqSIol-9.jpg 示意图</a>
+
+
+```cpp
+class Solution {
+public:
+    bool backspaceCompare(string S, string T) {
+        int i = S.length() - 1, j = T.length() - 1;
+        int skipS = 0, skipT = 0;
+
+        while (i >= 0 || j >= 0) {
+            while (i >= 0) {
+                if (S[i] == '#') {
+                    skipS++, i--;
+                } else if (skipS > 0) {
+                    skipS--, i--;
+                } else {
+                    break;
+                }
+            }
+            while (j >= 0) {
+                if (T[j] == '#') {
+                    skipT++, j--;
+                } else if (skipT > 0) {
+                    skipT--, j--;
+                } else {
+                    break;
+                }
+            }
+            if (i >= 0 && j >= 0) {
+                if (S[i] != T[j]) {
+                    return false;
+                }
+            } else {
+                if (i >= 0 || j >= 0) {
+                    return false;
+                }
+            }
+            i--, j--;
+        }
+        return true;
+    }
+};
+```
+作者：御三五 🥇
+链接：https://leetcode.cn/problems/backspace-string-compare/solutions/683776/shuang-zhi-zhen-bi-jiao-han-tui-ge-de-zi-8fn8/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 
 
