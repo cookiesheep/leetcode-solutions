@@ -14,7 +14,7 @@
 
 ### 我们拿有示例中的链表来举例，如动画所示：（纠正：动画应该是先移动pre，在移动cur）
 
-![image](https://github.com/user-attachments/assets/6bde73f0-4ed0-4f16-ad55-bc91ba9893c8)
+![image.gif](https://github.com/user-attachments/assets/6bde73f0-4ed0-4f16-ad55-bc91ba9893c8)
 
 
 首先定义一个cur指针，指向头结点，再定义一个pre指针，初始化为null。
