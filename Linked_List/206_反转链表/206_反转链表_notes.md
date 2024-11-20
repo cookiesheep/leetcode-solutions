@@ -14,7 +14,8 @@
 
 ### 我们拿有示例中的链表来举例，如动画所示：（纠正：动画应该是先移动pre，在移动cur）
 
-![Uploading 206.翻转链表.gif…]()
+
+![206 翻转链表](https://github.com/user-attachments/assets/cf64b86f-f735-41cf-9c55-a59a1301d7e7)
 
 
 
