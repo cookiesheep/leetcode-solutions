@@ -76,4 +76,55 @@ public:
 //比方说当要删除的是头结点  以及总长度只有2时
 //其实我想得不是特别明白  但改着改着莫名其妙就
 //    if(n2<0)  return head->next; 这行代码可以处理上面两个问题好像
+//思考了一下还是需要添加虚拟头节点最简单  不需要额外判断那么多了
 ```
+
+# other's solutions
+
+## 前言
+### 在对链表进行操作时，一种常用的技巧是添加一个哑节点（dummy node），它的 next 指针指向链表的头节点。这样一来，我们就不需要对头节点进行特殊的判断了。
+
+例如，在本题中，如果我们要删除节点 y，我们需要知道节点 y 的前驱节点 x，并将 x 的指针指向 y 的后继节点。但由于头节点不存在前驱节点，因此我们需要在删除头节点时进行特殊判断。但如果我们添加了哑节点，那么头节点的前驱节点就是哑节点本身，此时我们就只需要考虑通用的情况即可。
+
+特别地，在某些语言中，由于需要自行对内存进行管理。因此在实际的面试中，对于「是否需要释放被删除节点对应的空间」这一问题，我们需要和面试官进行积极的沟通以达成一致。下面的代码中默认不释放空间。
+
+## 方法一：计算链表长度
+思路与算法
+
+一种容易想到的方法是，我们首先从头节点开始对链表进行一次遍历，得到链表的长度 L。随后我们再从头节点开始对链表进行一次遍历，当遍历到第 L−n+1 个节点时，它就是我们需要删除的节点。
+
+为了与题目中的 n 保持一致，节点的编号从 1 开始，头节点为编号 1 的节点。
+
+为了方便删除操作，我们可以从哑节点开始遍历 L−n+1 个节点。当遍历到第 L−n+1 个节点时，它的下一个节点就是我们需要删除的节点，这样我们只需要修改一次指针，就能完成删除操作。
+
+```cpp
+class Solution {
+public:
+    int getLength(ListNode* head) {
+        int length = 0;
+        while (head) {
+            ++length;
+            head = head->next;
+        }
+        return length;
+    }
+
+    ListNode* removeNthFromEnd(ListNode* head, int n) {
+        ListNode* dummy = new ListNode(0, head);
+        int length = getLength(head);
+        ListNode* cur = dummy;
+        for (int i = 1; i < length - n + 1; ++i) {
+            cur = cur->next;
+        }
+        cur->next = cur->next->next;
+        ListNode* ans = dummy->next;
+        delete dummy;
+        return ans;
+    }
+};
+//看了一遍 真得方便了特别多！
+```
+作者：力扣官方题解
+链接：https://leetcode.cn/problems/remove-nth-node-from-end-of-list/solutions/450350/shan-chu-lian-biao-de-dao-shu-di-nge-jie-dian-b-61/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
